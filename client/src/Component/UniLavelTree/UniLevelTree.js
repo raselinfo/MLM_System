@@ -1,0 +1,132 @@
+import React from "react";
+import Tree from "react-d3-tree";
+// import Person from "./person.png";
+
+let debugData = [
+    {
+        name: "Tree 1",
+        children: [
+            {
+                name: "tree 2",
+                
+            },
+        ]
+    }
+];
+
+const containerStyles = {
+    width: "100%",
+    height: "100vh"
+};
+const renderForeignObjectNode = ({
+    nodeDatum,
+    toggleNode,
+    foreignObjectProps
+}) => (
+    <g onClick={toggleNode}>
+        {/* 
+    {/* `foreignObject` requires width & height to be explicitly set. */}
+        <foreignObject {...foreignObjectProps}>
+            <div
+                style={{
+                    border: "1px solid white",
+                    backgroundColor: "#fefefe"
+                }}
+            >
+                <img
+                    src={'https://www.pngkey.com/png/full/46-462764_how-to-set-use-person-icon-blue-no.png'}
+                    alt="person"
+                    style={{
+                        height: "55px",
+                        position: "absolute",
+                        zIndex: 10,
+                        top: -0,
+                        left: "58px"
+                    }}
+                />
+                <div
+                    style={{
+                        textAlign: "center",
+                        marginTop: 48,
+                        fontWeight: "bold",
+                        zIndex: 11,
+                        height: 30
+                    }}
+                >
+                    {nodeDatum.name}
+                </div>
+            </div>
+        </foreignObject>
+        <circle r={15} cy={40}></circle>
+        <text
+            x="0"
+            y="40"
+            text-anchor="middle"
+            stroke="#fff"
+            stroke-width="1px"
+            dy=".3em"
+        >
+            {nodeDatum.children?.length.toString()}
+        </text>
+    </g>
+);
+const nodeSize = { x: 150, y: 150 };
+const foreignObjectProps = {
+    width: nodeSize.x,
+    height: nodeSize.y - 40,
+    x: -75,
+    y: -55
+};
+
+export default class CenteredTree extends React.PureComponent {
+    state = {};
+
+    componentDidMount() {
+        const dimensions = this.treeContainer.getBoundingClientRect();
+        this.setState({
+            translate: {
+                x: dimensions.width / 2,
+                y: 70
+            },
+            data: debugData,
+            depth: 2
+        });
+    }
+    abc() {
+        //this.setState({
+        //data:} );
+        var data = JSON.parse(JSON.stringify(this.state.data));
+        data[0].children[0].children[0].children = [{ name: "환타" }];
+        this.setState({ data, depth: 2 });
+        debugData = [];
+        console.log(2, data);
+    }
+    onNodeClick(a, e) {
+        console.log(a, e);
+    }
+
+    render() {
+        return (
+            <div style={containerStyles} ref={(tc) => (this.treeContainer = tc)}>
+                {this.state.data && (
+                    <Tree
+                        data={this.state.data}
+                        translate={this.state.translate}
+                        orientation="vertical"
+                        pathFunc="step"
+                        shouldCollapseNeighborNodes={true}
+                        separation={{ siblings: 1, nonSiblings: 1 }}
+                        nodeSize={nodeSize}
+                        initialDepth={this.state.depth}
+                        onNodeClick={this.onNodeClick}
+                        renderCustomNodeElement={(rd3tProps) =>
+                            renderForeignObjectNode({ ...rd3tProps, foreignObjectProps })
+                        }
+                        zoom={2}
+                    />
+                )}
+                <br />
+            </div>
+        );
+    }
+}

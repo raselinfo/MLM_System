@@ -1,0 +1,31 @@
+
+.mlm{
+    padding-top: 80px;
+}
+
+.mlm-flex{
+    display: flex;
+}
+
+.mlm-info{
+    width: 50%;
+    margin-top: 30px;
+}
+.mlm-h2{
+    font-weight: 700;
+}
+
+.mlm-p{
+    font-weight: 600;
+    color: rgb(107, 107, 107);
+}
+
+.mlm-i{
+    margin-left: 100px;
+    border: 1px solid rgb(223, 21, 223);
+    padding: 5px;
+}
+
+.mlm-img{
+    height: 250px;
+}

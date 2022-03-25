@@ -1,0 +1,38 @@
+.h-fe{
+    margin-top: 80px;
+    padding-top: 100px;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),url('../../../Image/Banner/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+.hf-flex{
+    display: flex;
+}
+
+.hf-ib{
+    border: 1px solid rgb(221, 20, 221);
+    padding: 5px;
+}
+
+.hf-i{
+    height: 250px;
+    width: 450px;
+}
+
+.hf-info{
+    width: 50%;
+    margin-left: 100px;
+}
+
+.hf-h4{
+    color: rgb(211, 18, 211);
+    text-align: center;
+}
+
+.hf-p{
+    color: rgb(235, 235, 235);
+    font-weight: 600;
+}

@@ -1,0 +1,27 @@
+.d-g{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.dh-box{
+    height: 150px;
+    width: 255px;
+    padding: 20px;
+    border-radius: 5px;
+    padding-top: 30px;
+    color: white;
+}
+
+.b1{
+    background-color: rgba(73, 98, 131, 0.884);
+    
+}
+.b2{
+    background-color: rgba(24, 190, 99, 0.945);
+}
+.b3{
+    background-color: rgba(216, 9, 9, 0.918);
+}
+.b4{
+    background-color: blue;
+}

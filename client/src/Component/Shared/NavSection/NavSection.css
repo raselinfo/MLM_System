@@ -1,0 +1,50 @@
+.nav-section{
+    width: 90%;
+    margin: auto;
+}
+
+.nav{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.nav-end{
+   margin-left: 42%;
+}
+
+.nav-i{
+    font-weight: 700 !important;
+    margin-right: 15px;
+    margin-top: -15px;
+    color: white !important;
+}
+
+#collasible-nav-dropdown{
+    color: white;
+}
+
+.nav-i:hover{
+   border-bottom: 3px solid rgb(185, 13, 185);
+}
+
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.logo-h5{
+    color: rgb(240, 71, 255);
+    font-weight: 700;
+}
+
+.logo-p{
+    color: rgb(1, 146, 1);
+    font-weight: 800;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.n-icon{
+    margin-right: 10px;
+    font-size: 13px;
+}
