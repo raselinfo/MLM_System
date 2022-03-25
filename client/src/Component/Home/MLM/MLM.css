@@ -29,3 +29,29 @@
 .mlm-img{
     height: 250px;
 }
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width:  480px) {
+    .mlm-flex{
+        display: block;
+    }
+
+    .mlm-info{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .mlm-i{
+        margin-left: 0px;
+        border: 1px solid rgb(223, 21, 223);
+        padding: 5px;
+    }
+
+    .mlm-img{
+        height: 200px;
+        width: 100%;
+    }
+}
+

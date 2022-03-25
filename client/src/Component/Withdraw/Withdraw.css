@@ -34,3 +34,24 @@
     justify-content: space-between;
     border-bottom: 1px dotted black;
 }
+
+
+
+@media only screen and (min-width: 320px) and (max-width:  480px) {
+
+    .flex{
+        display: block;
+    }
+
+    .withdraw{
+        width: 100%;
+    }
+
+    .w-bill{
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 30px;
+        height: 380px;
+    }
+}

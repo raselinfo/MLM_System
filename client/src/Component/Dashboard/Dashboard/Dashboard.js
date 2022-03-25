@@ -26,6 +26,7 @@ import UserRequest from '../UserRequest/UserRequest';
 import ContactRE from '../ContactRe/ContactRE';
 import CallBR from '../CallBR/CallBR';
 import ComplainB from '../ComplainB/ComplainB';
+import WithdrawRE from '../WithdrawRE/WithdrawRE';
 
 
 
@@ -190,6 +191,9 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/all-complain`}>
                         <ComplainB />
+                    </Route>
+                    <Route path={`${path}/withdraw-request`}>
+                        <WithdrawRE />
                     </Route>
                     <Route path={`${path}/paid-match`}>
 

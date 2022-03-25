@@ -1,5 +1,8 @@
 import React from "react";
 import Tree from "react-d3-tree";
+import NavSection from '../Shared/NavSection/NavSection'
+import TopSection from '../Shared/TopSection/TopSection'
+import Footer from '../Shared/Footer/Footer'
 // import Person from "./person.png";
 
 let debugData = [
@@ -107,6 +110,17 @@ export default class CenteredTree extends React.PureComponent {
 
     render() {
         return (
+            <>
+
+<div className='p-i'>
+                <TopSection />
+                <NavSection />
+                <div className='container'>
+                    <h1 className='p-i-h1'>Unilevel Tree</h1>
+                    <p className='p-i-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. A itaque et voluptatum non fugiat saepe in. <br />Quo architecto dicta temporibus.</p>
+                </div>
+            </div>
+
             <div style={containerStyles} ref={(tc) => (this.treeContainer = tc)}>
                 {this.state.data && (
                     <Tree
@@ -127,6 +141,8 @@ export default class CenteredTree extends React.PureComponent {
                 )}
                 <br />
             </div>
+            <Footer/>
+            </>
         );
     }
 }

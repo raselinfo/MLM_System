@@ -14,22 +14,30 @@ import ReferList from './Component/ReferList/ReferList'
 import ComplainBox from './Component/ComplainBox/ComplainBox'
 import Joining from './Component/Joining/Joining'
 import UniLevelTree from './Component/UniLavelTree/UniLevelTree'
+import Login from './Component/Login/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivetRoute from './Component/PrivetRout/PrivetRoute';
+
 
 
 function App() {
   return (
     <div className="">
-    
-      <Router>
+      <AuthProvider>
+        <Router>
+
+          <PrivetRoute path="/personal-info">
+            <PersonalInfo />
+          </PrivetRoute>
+
+
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/personal-info">
-              <PersonalInfo />
-            </Route>
+            
             <Route path="/profile-update">
               <ProfileUpdate />
             </Route>
@@ -67,10 +75,14 @@ function App() {
               <UniLevelTree />
             </Route>
             <Route path="/dashboard">
-              <Dashboard/>
+              <Dashboard />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </Router>
+      </AuthProvider>
     </div>
   );
 }

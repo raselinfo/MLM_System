@@ -36,3 +36,23 @@
     color: rgb(235, 235, 235);
     font-weight: 600;
 }
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width:  480px) {
+    .hf-flex{
+        display: block;
+    }
+
+    .hf-info{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
+    .hf-i{
+        height: 200px;
+        width: 100%;
+    }
+}

@@ -4,9 +4,15 @@ import './NavSection.css'
 import logo from '../../../Image/logo.png'
 import { FaCheckDouble } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 
-const componentName = () => {
+const ComponentName = () => {
+
+    const { user, logOut, admin } = useAuth();
+
+
+
     return (
         <div>
             <div className='nav-section'>
@@ -32,11 +38,12 @@ const componentName = () => {
                                 <NavDropdown.Item as={Link} to='/profile-update'><FaCheckDouble className='n-icon' />Profile Update</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/uni-level-tree'><FaCheckDouble className='n-icon' />Unilevel Tree</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3"><FaCheckDouble className='n-icon' />Password Change</NavDropdown.Item>
+                                <NavDropdown.Item onClick={logOut}><FaCheckDouble className='n-icon' />Logout</NavDropdown.Item>
 
                             </NavDropdown>
                             <NavDropdown className='nav-i' title="ACCOUNT" id="collasible-nav-dropdown">
                                 <NavDropdown.Item as={Link} to='/income-report' ><FaCheckDouble className='n-icon' />Income Report</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to='/purchase-balance'><FaCheckDouble className='n-icon' />Purchase Balance</NavDropdown.Item>
+                                {/* <NavDropdown.Item as={Link} to='/purchase-balance'><FaCheckDouble className='n-icon' />Purchase Balance</NavDropdown.Item> */}
                                 <NavDropdown.Item as={Link} to='/withdraw'><FaCheckDouble className='n-icon' />Withdraw</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/withdraw-report'><FaCheckDouble className='n-icon' />Withdraw Report</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/generation-report'><FaCheckDouble className='n-icon' />Generation Commission</NavDropdown.Item>
@@ -60,4 +67,4 @@ const componentName = () => {
     );
 };
 
-export default componentName;
+export default ComponentName;

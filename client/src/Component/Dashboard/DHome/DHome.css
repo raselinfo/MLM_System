@@ -25,3 +25,27 @@
 .b4{
     background-color: blue;
 }
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width:  480px) {
+    .d-g{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .b2{
+        background-color: rgba(24, 190, 99, 0.945);
+        margin-top: 20px;
+    }
+    .b3{
+        background-color: rgba(216, 9, 9, 0.918);
+        margin-top: 20px;
+    }
+    .b4{
+        background-color: blue;
+        margin-top: 20px;
+    }
+    
+}

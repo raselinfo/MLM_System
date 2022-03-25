@@ -29,7 +29,7 @@ async function run() {
     try {
         await client.connect();
         const database = client.db('mlm');
-        // const usersCollection = database.collection('users');
+        const usersCollection = database.collection('users');
         const clientrequestCollection = database.collection('client-request');
         const complainCollection = database.collection('complain');
         const contactCollection = database.collection('contact');
@@ -111,22 +111,33 @@ async function run() {
 
 
 
-        // // users data
+        // users data
 
-        // app.post('/users', async (req, res) => {
-        //     const user = req.body;
-        //     const result = await usersCollection.insertOne(user)
-        //     res.json(result);
-        // })
+        app.post('/users', async (req, res) => {
+            const user = req.body;
+            const result = await usersCollection.insertOne(user)
+            res.json(result);
+        })
 
-        // app.put('/users', async (req, res) => {
-        //     const user = req.body;
-        //     const filter = { email: user.email };
-        //     const options = { upsert: true };
-        //     const updateDoc = { $set: user };
-        //     const result = await usersCollection.updateOne(filter, updateDoc, options);
-        //     res.json(result);
-        // })
+        app.put('/users', async (req, res) => {
+            const user = req.body;
+            const filter = { email: user.email };
+            const options = { upsert: true };
+            const updateDoc = { $set: user };
+            const result = await usersCollection.updateOne(filter, updateDoc, options);
+            res.json(result);
+        })
+
+        app.get('/users/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email: email };
+            const user = await usersCollection.findOne(query);
+            let isAdmin = false;
+            if (user?.role === 'admin') {
+                isAdmin = true;
+            }
+            res.json({ admin: isAdmin });
+        })
 
 
         // client req data    
