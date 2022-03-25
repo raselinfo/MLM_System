@@ -23,6 +23,9 @@ import DHome from '../DHome/DHome'
 import RENuser from '../RENuser/RENuser'
 import AllUsers from '../AllUsers/AllUsers'
 import UserRequest from '../UserRequest/UserRequest';
+import ContactRE from '../ContactRe/ContactRE';
+import CallBR from '../CallBR/CallBR';
+import ComplainB from '../ComplainB/ComplainB';
 
 
 
@@ -67,7 +70,16 @@ function Dashboard(props) {
                         <Link className='li-d' to={`${url}/new-user`}>New Register</Link>
                     </ListItem>
                     <ListItem >
-                        <Link className='li-d' to={`${url}/post-result`}>Withdraw Request</Link>
+                        <Link className='li-d' to={`${url}/withdraw-request`}>Withdraw Request</Link>
+                    </ListItem>
+                    <ListItem >
+                        <Link className='li-d' to={`${url}/contact-request`}>Contact Request</Link>
+                    </ListItem>
+                    <ListItem >
+                        <Link className='li-d' to={`${url}/call-back-result`}>Call-Back Request</Link>
+                    </ListItem>
+                    <ListItem >
+                        <Link className='li-d' to={`${url}/all-complain`}>Complain</Link>
                     </ListItem>
                     <ListItem >
                         <Link className='li-d' to={`${url}/post-result-two`}>Logout</Link>
@@ -169,6 +181,15 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/user-request`}>
                         <UserRequest />
+                    </Route>
+                    <Route path={`${path}/contact-request`}>
+                        <ContactRE />
+                    </Route>
+                    <Route path={`${path}/call-back-result`}>
+                        <CallBR />
+                    </Route>
+                    <Route path={`${path}/all-complain`}>
+                        <ComplainB />
                     </Route>
                     <Route path={`${path}/paid-match`}>
 

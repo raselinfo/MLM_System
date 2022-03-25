@@ -33,7 +33,7 @@ async function run() {
         const clientrequestCollection = database.collection('client-request');
         const complainCollection = database.collection('complain');
         const contactCollection = database.collection('contact');
-        const wicCollection = database.collection('wic');
+        const callbackCollection = database.collection('callback');
 
 
 
@@ -72,17 +72,18 @@ async function run() {
 
 
 
-        // wic data
 
-        app.get('/wic', async (req, res) => {
-            const cursor = wicCollection.find({});
-            const wic = await cursor.toArray();
-            res.send(wic);
+        // call back data
+
+        app.get('/callback', async (req, res) => {
+            const cursor = callbackCollection.find({});
+            const callback = await cursor.toArray();
+            res.send(callback);
         })
 
-        app.post('/wic', async (req, res) => {
-            const wicItem = req.body;
-            const result = await wicCollection.insertOne(wicItem)
+        app.post('/callback', async (req, res) => {
+            const callbackItem = req.body;
+            const result = await callbackCollection.insertOne(callbackItem)
             res.json(result);
         })
 

@@ -10,6 +10,7 @@ const ComponentName = () => {
     const [act, setAct] = useState('');
     const [referId, setReferId] = useState('');
     const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
     const [fatherName, setFatherName] = useState('');
     const [motherName, setMotherName] = useState('');
     const [nomineeName, setNomineeName] = useState('');
@@ -33,6 +34,7 @@ const ComponentName = () => {
         formData.append('accountType', act);
         formData.append('referId', referId);
         formData.append('name', name);
+        formData.append('phoneNumber', number);
         formData.append('fatherName', fatherName);
         formData.append('motherName', motherName);
         formData.append('nomineeName', nomineeName);
@@ -100,6 +102,10 @@ const ComponentName = () => {
                         <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={e => setProfilePic(e.target.value)} />
 
                     </label>
+                    <br />
+                    <h6 className='up-p mt-2'>Phone Number</h6>
+                    <input className="up-input" placeholder="Name" onChange={e => setNumber(e.target.value)} />
+                   
                     <br />
                     <h6 className='up-p mt-2'>Your Name</h6>
                     <input className="up-input" type="text" placeholder="Name" onChange={e => setName(e.target.value)} />
