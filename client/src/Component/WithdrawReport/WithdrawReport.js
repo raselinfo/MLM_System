@@ -20,7 +20,6 @@ const componentName = () => {
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
-                            <th>SL</th>
                             <th>Amount</th>
                             <th>Request</th>
                             <th>W.Charge</th>
@@ -33,7 +32,6 @@ const componentName = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
                             <td>2500</td>
                             <td>2500</td>
                             <td>125</td>

@@ -20,7 +20,6 @@ const componentName = () => {
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
-                            <th>SL</th>
                             <th>User</th>
                             <th>Name</th>
                             <th>Rank</th>
@@ -32,7 +31,6 @@ const componentName = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
                             <td>saiful2</td>
                             <td>Md Saiful Islam</td>
                             <td>Member</td>
@@ -44,7 +42,7 @@ const componentName = () => {
 
 
                         <tr>
-                            <td colSpan={4}>Total Point</td>
+                            <td colSpan={3}>Total Point</td>
                             <td>6000</td>
                             <td></td>
                             <td></td>

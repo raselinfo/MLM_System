@@ -54,7 +54,14 @@ const ComponentName = () => {
                                 <NavDropdown.Item as={Link} to='/joining'><FaCheckDouble className='n-icon' />Joining</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3"><FaCheckDouble className='n-icon' />News</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/complain-box'><FaCheckDouble className='n-icon' />Complain Box</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to='/dashboard'><FaCheckDouble className='n-icon' />Dashboard</NavDropdown.Item>
+
+                                {
+                                    admin &&
+                                    <NavDropdown.Item as={Link} to='/dashboard'><FaCheckDouble className='n-icon' />Dashboard</NavDropdown.Item>
+
+                                }
+
+                                
                             </NavDropdown>
                             <Nav.Link className='nav-i' as={Link} to='/contact-us'>CONTACT</Nav.Link>
 

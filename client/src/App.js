@@ -31,16 +31,16 @@ function App() {
           <PrivetRoute path="/personal-info">
             <PersonalInfo />
           </PrivetRoute>
-
+          <PrivetRoute path="/profile-update">
+              <ProfileUpdate />
+            </PrivetRoute>
 
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
             
-            <Route path="/profile-update">
-              <ProfileUpdate />
-            </Route>
+            
             <Route path="/income-report">
               <IncomeReport />
             </Route>
