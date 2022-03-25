@@ -34,6 +34,7 @@ async function run() {
         const complainCollection = database.collection('complain');
         const contactCollection = database.collection('contact');
         const callbackCollection = database.collection('callback');
+        const withdrawrequestCollection = database.collection('withdraw-request');
 
 
 
@@ -84,6 +85,23 @@ async function run() {
         app.post('/callback', async (req, res) => {
             const callbackItem = req.body;
             const result = await callbackCollection.insertOne(callbackItem)
+            res.json(result);
+        })
+
+
+
+
+        // withdraw request data
+
+        app.get('/withdraw-request', async (req, res) => {
+            const cursor = withdrawrequestCollection.find({});
+            const withdrawReq = await cursor.toArray();
+            res.send(withdrawReq);
+        })
+
+        app.post('/withdraw-request', async (req, res) => {
+            const withdrawItem = req.body;
+            const result = await withdrawrequestCollection.insertOne(withdrawItem)
             res.json(result);
         })
 
