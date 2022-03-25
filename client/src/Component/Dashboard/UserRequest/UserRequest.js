@@ -25,7 +25,7 @@ const UserRequest = () => {
             {
                 userR.map(user => <div className='user-r-box'>
                     <img src={`data:image/png;base64,${user.profilePic}`} alt='ggg' />
-                    <h6>User ID: {user.referId}</h6>
+                    <h6>User ID: {user._id}</h6>
                     <h6>Account-Type: {user.accountType}</h6>
                     <h6>Refer ID: {user.referId}</h6>
                     <h6>Name: {user.name}</h6>
