@@ -22,6 +22,7 @@ import {
 import DHome from '../DHome/DHome'
 import RENuser from '../RENuser/RENuser'
 import AllUsers from '../AllUsers/AllUsers'
+import UserRequest from '../UserRequest/UserRequest';
 
 
 
@@ -165,6 +166,9 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/all-users`}>
                         <AllUsers />
+                    </Route>
+                    <Route path={`${path}/user-request`}>
+                        <UserRequest />
                     </Route>
                     <Route path={`${path}/paid-match`}>
 
